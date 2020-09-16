@@ -1,0 +1,44 @@
+In this project, we are using the geocoding API
+to represent geographic locations of
+university and college names and then placing the data on a Google
+Map.
+
+We must install the SQLite browser to view and modify
+the databases that we would be storing.
+
+When we Run the geoload.py program, it will read the input
+lines in where.data file and for each line, we check whether it is already
+present in the database (geodata.sqlite) and if we don't have the data for
+the location, call the geocoding API to retrieve the data and store it in
+the database.
+
+Once we have some data loaded into geodata.sqlite, we can
+visualize the data using the (geodump.py) program.  This
+program reads the database and writes tile file (where.js)
+with the location, latitude, and longitude in the form of
+executable JavaScript code.
+
+The file where.js is a JavaScript list of lists. 
+The syntax for JavaScript list constants is very similar to Python.
+
+The file (where.html) consists of HTML and JavaScript to visualize
+a Google Map.  It reads the most recent data in where.js to get
+the data to be visualized.
+
+--------------------------------------------------------------
+urllib.parse.urlencode(parms) gives us a dictionary
+
+explaination for conn.commit():
+A database transaction is a grouping of SQL statements that make a
+logical data change to the database.
+
+When Cursor.execute() executes a SQL statement, a transaction is
+started or continued. But By default, cx_Oracle(it)
+does not commit this transaction to the database. The methods
+Connection.commit() and Connection.rollback() methods can be
+used to explicitly commit or rollback a transaction.
+
+What is commit()?
+A COMMIT statement in SQL ends a transaction within a relational
+database management system and makes all changes visible to other users.
+
